@@ -1,7 +1,9 @@
+import { reducer } from './reducers';
+
 export class ReduxYolo {
   constructor(dispatch) {
     this.dispatch = dispatch;
-    this.reducers = {};
+    this.reducer = reducer;
   }
 }
 

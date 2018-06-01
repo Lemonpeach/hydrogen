@@ -5,5 +5,10 @@
   "parser": "babel-eslint",
   "env": {
     "jest": true
+  },
+  "settings": {
+    "import/resolver": {
+      "babel-module": {}
+    }
   }
 }
