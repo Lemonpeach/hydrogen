@@ -1,0 +1,9 @@
+{
+  "extends": [
+    "@scotia/eslint-config-scotiabank-base"
+  ],
+  "parser": "babel-eslint",
+  "env": {
+    "jest": true
+  }
+}

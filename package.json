@@ -1,0 +1,28 @@
+{
+  "name": "react-redux-yolo-packages",
+  "version": "0.0.0",
+  "description": "YOLO; so why waste your time writing react and react-redux boilerplate?",
+  "main": "index.js",
+  "scripts": {
+    "test": "lerna run test",
+    "postinstall": "lerna bootstrap"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lemonpeach/react-redux-yolo.git"
+  },
+  "keywords": [
+    "react",
+    "redux",
+    "boilerplate",
+    "feathers"
+  ],
+  "license": "MPL-2.0",
+  "bugs": {
+    "url": "https://github.com/Lemonpeach/react-redux-yolo/issues"
+  },
+  "homepage": "https://github.com/Lemonpeach/react-redux-yolo#readme",
+  "devDependencies": {
+    "lerna": "^2.9.0"
+  }
+}
