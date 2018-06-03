@@ -1,6 +1,7 @@
-import yolo, { ReduxYolo } from '../index';
+import yolo from '../index';
+import { ReduxYolo } from '../yolo';
 
-describe('index', () => {
+describe('yolo', () => {
   test('exports a function', () => {
     const dispatch = jest.fn();
     expect(yolo(dispatch)).toBeInstanceOf(ReduxYolo);

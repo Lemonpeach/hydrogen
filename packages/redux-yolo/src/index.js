@@ -1,10 +1,4 @@
-import { reducer } from './reducers';
+import yolo from './yolo';
 
-export class ReduxYolo {
-  constructor(dispatch) {
-    this.dispatch = dispatch;
-    this.reducer = reducer;
-  }
-}
-
-export default dispatch => new ReduxYolo(dispatch);
+export default yolo;
+export { reducer } from './reducers';
