@@ -4,7 +4,8 @@
   ],
   "parser": "babel-eslint",
   "env": {
-    "jest": true
+    "jest": true,
+    "browser": true
   },
   "settings": {
     "import/resolver": {
