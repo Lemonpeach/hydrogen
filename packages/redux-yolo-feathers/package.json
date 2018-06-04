@@ -1,0 +1,63 @@
+{
+  "name": "redux-yolo-feathers",
+  "version": "0.0.0",
+  "description": "Feathers request adapter for redux-yolo.",
+  "main": "lib/index.js",
+  "scripts": {
+    "clean": "shx rm -rf lib",
+    "babel": "babel src --out-dir lib --ignore test.js",
+    "test": "eslint src && jest src",
+    "build": "npm run clean && npm run babel"
+  },
+  "files": [
+    "src",
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lemonpeach/react-redux-yolo.git"
+  },
+  "keywords": [
+    "react",
+    "redux",
+    "boilerplate",
+    "feathers"
+  ],
+  "license": "MPL-2.0",
+  "bugs": {
+    "url": "https://github.com/Lemonpeach/react-redux-yolo/issues"
+  },
+  "homepage": "https://github.com/Lemonpeach/react-redux-yolo#readme",
+  "peerDependencies": {
+    "@feathersjs/client": "^3.4.0"
+  },
+  "dependencies": {
+    "lodash": "^4.17.10"
+  },
+  "devDependencies": {
+    "@scotia/eslint-config-scotiabank-base": "^1.3.0",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^8.2.3",
+    "babel-plugin-module-resolver": "^3.1.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "eslint": "^4.19.1",
+    "eslint-import-resolver-babel-module": "^4.0.0",
+    "eslint-plugin-import": "^2.12.0",
+    "jest": "^23.1.0",
+    "regenerator-runtime": "^0.11.1",
+    "shx": "^0.2.2"
+  },
+  "jest": {
+    "collectCoverage": true,
+    "coverageThreshold": {
+      "global": {
+        "branches": 100,
+        "functions": 100,
+        "lines": 100,
+        "statements": 100
+      }
+    }
+  }
+}
