@@ -22,6 +22,7 @@ describe('actions', () => {
     expect(verbs).toEqual({
       GET: 'get',
       FIND: 'find',
+      FIRST: 'first',
       CREATE: 'create',
       UPDATE: 'update',
       PATCH: 'patch',
@@ -60,6 +61,7 @@ describe('actions', () => {
   test('isQuery', () => {
     expect(isQuery(getType(verbs.FIND, 'people', stages.PENDING))).toBe(true);
     expect(isQuery(getType(verbs.GET, 'people', stages.PENDING))).toBe(true);
+    expect(isQuery(getType(verbs.FIRST, 'people', stages.PENDING))).toBe(true);
     expect(isQuery(getType(verbs.CREATE, 'people', stages.PENDING))).toBe(false);
   });
 

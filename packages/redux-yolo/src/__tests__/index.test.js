@@ -1,14 +1,11 @@
-import yolo from '../index';
-import { ReduxYolo } from '../yolo';
+import { reducers as _reducers } from '../reducers';
+import hydrogen from '../hydrogen';
 
-describe('yolo', () => {
-  test('exports a function', () => {
-    const dispatch = jest.fn();
-    expect(yolo(dispatch)).toBeInstanceOf(ReduxYolo);
-  });
+import create, { reducers } from '../index';
 
-  test('constructs correctly', () => {
-    const dispatch = jest.fn();
-    expect(yolo(dispatch)).toHaveProperty('dispatch', dispatch);
+describe('index', () => {
+  test('exports', () => {
+    expect(create).toBe(hydrogen);
+    expect(reducers).toBe(_reducers);
   });
 });
