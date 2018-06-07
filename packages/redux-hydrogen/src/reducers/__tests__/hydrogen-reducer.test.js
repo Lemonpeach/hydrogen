@@ -1,4 +1,4 @@
-describe('reducers/yolo', () => {
+describe('reducers/hydrogen', () => {
   beforeEach(() => {
     jest.clearAllMocks();
     jest.resetModules();
@@ -9,27 +9,27 @@ describe('reducers/yolo', () => {
 
   test('does nothing if creator is null', () => {
     const state = {};
-    const { reducer } = require('../yolo-reducer');
+    const { reducer } = require('../hydrogen-reducer');
     expect(reducer(state, {})).toBe(state);
     expect(require('../data-reducer').reducer).toHaveBeenCalledTimes(0);
   });
 
   test('returns empty state', () => {
-    const { reducer } = require('../yolo-reducer');
+    const { reducer } = require('../hydrogen-reducer');
     expect(reducer(undefined, {})).toEqual({});
     expect(require('../data-reducer').reducer).toHaveBeenCalledTimes(0);
   });
 
   test('does nothing if creator is not correct', () => {
     const state = {};
-    const { reducer } = require('../yolo-reducer');
+    const { reducer } = require('../hydrogen-reducer');
     expect(reducer(state, { creator: 'nah' })).toBe(state);
     expect(require('../data-reducer').reducer).toHaveBeenCalledTimes(0);
   });
 
   test('delegates to data reducer', () => {
-    const action = { name: 'people', creator: '@redux-yolo' };
-    const { reducer } = require('../yolo-reducer');
+    const action = { name: 'people', creator: '@redux-hydrogen' };
+    const { reducer } = require('../hydrogen-reducer');
     expect(reducer({}, action)).toEqual({ people: 'Expect me.' });
     expect(require('../data-reducer').reducer).toHaveBeenCalledTimes(1);
     expect(require('../data-reducer').reducer).toHaveBeenCalledWith(

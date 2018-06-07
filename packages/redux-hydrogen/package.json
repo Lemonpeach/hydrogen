@@ -1,7 +1,7 @@
 {
-  "name": "redux-yolo",
+  "name": "redux-hydrogen",
   "version": "0.0.0",
-  "description": "YOLO; so why waste your time writing redux boilerplate?",
+  "description": "Don't waste your time writing redux boilerplate.",
   "main": "lib/index.js",
   "scripts": {
     "clean": "shx rm -rf lib",
@@ -15,19 +15,17 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Lemonpeach/react-redux-yolo.git"
+    "url": "git+https://github.com/Lemonpeach/redux-hydrogen.git"
   },
   "keywords": [
-    "react",
     "redux",
-    "boilerplate",
-    "feathers"
+    "boilerplate"
   ],
   "license": "MPL-2.0",
   "bugs": {
-    "url": "https://github.com/Lemonpeach/react-redux-yolo/issues"
+    "url": "https://github.com/Lemonpeach/redux-hydrogen/issues"
   },
-  "homepage": "https://github.com/Lemonpeach/react-redux-yolo#readme",
+  "homepage": "https://github.com/Lemonpeach/redux-hydrogen#readme",
   "devDependencies": {
     "@scotia/eslint-config-scotiabank-base": "^1.3.0",
     "babel-cli": "^6.26.0",

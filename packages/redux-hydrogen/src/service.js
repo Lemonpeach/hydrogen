@@ -13,10 +13,10 @@ export const createService = (name, adapter) => ({
   get: thunk.bind(null, name, adapter, verbs.GET, true),
   find: thunk.bind(null, name, adapter, verbs.FIND, true),
   first: thunk.bind(null, name, adapter, verbs.FIRST, true),
-  create: thunk.bind(null, name, adapter, verbs.CREATE),
-  update: thunk.bind(null, name, adapter, verbs.UPDATE),
-  patch: thunk.bind(null, name, adapter, verbs.PATCH),
-  remove: thunk.bind(null, name, adapter, verbs.REMOVE),
+  create: thunk.bind(null, name, adapter, verbs.CREATE, false),
+  update: thunk.bind(null, name, adapter, verbs.UPDATE, false),
+  patch: thunk.bind(null, name, adapter, verbs.PATCH, false),
+  remove: thunk.bind(null, name, adapter, verbs.REMOVE, false),
   upsert(data, query) {
     return dispatch => this.find(query)(dispatch).then(result => {
       if (result.data.length > 0) return { ...result, data: result.data[0] };

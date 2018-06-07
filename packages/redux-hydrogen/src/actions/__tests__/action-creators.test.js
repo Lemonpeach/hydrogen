@@ -15,7 +15,7 @@ describe('actions/action-creators', () => {
       type: getType(verbs.CREATE, 'people', stages.PENDING),
       verb: verbs.CREATE,
       name: 'people',
-      creator: '@redux-yolo'
+      creator: '@redux-hydrogen'
     });
   });
 
@@ -25,7 +25,7 @@ describe('actions/action-creators', () => {
       type: getType(verbs.CREATE, 'people', stages.FULFILLED),
       verb: verbs.CREATE,
       name: 'people',
-      creator: '@redux-yolo',
+      creator: '@redux-hydrogen',
       data,
       query: undefined
     });
@@ -35,7 +35,7 @@ describe('actions/action-creators', () => {
       type: getType(verbs.FIND, 'people', stages.FULFILLED),
       verb: verbs.FIND,
       name: 'people',
-      creator: '@redux-yolo',
+      creator: '@redux-hydrogen',
       data,
       query
     });
@@ -44,7 +44,7 @@ describe('actions/action-creators', () => {
       type: getType(verbs.GET, 'people', stages.FULFILLED),
       verb: verbs.GET,
       name: 'people',
-      creator: '@redux-yolo',
+      creator: '@redux-hydrogen',
       data,
       query
     });
@@ -55,7 +55,7 @@ describe('actions/action-creators', () => {
       type: getType(verbs.CREATE, 'people', stages.REJECTED),
       verb: verbs.CREATE,
       name: 'people',
-      creator: '@redux-yolo',
+      creator: '@redux-hydrogen',
       error: 'Expect me.'
     });
   });

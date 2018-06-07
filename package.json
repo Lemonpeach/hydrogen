@@ -1,7 +1,7 @@
 {
-  "name": "react-redux-yolo-packages",
+  "name": "redux-hydrogen-packages",
   "version": "0.0.0",
-  "description": "YOLO; so why waste your time writing react and react-redux boilerplate?",
+  "description": "Don't waste your time writing react and react-redux boilerplate.",
   "main": "index.js",
   "scripts": {
     "test": "lerna run test",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Lemonpeach/react-redux-yolo.git"
+    "url": "git+https://github.com/Lemonpeach/redux-hydrogen.git"
   },
   "keywords": [
     "react",
@@ -20,9 +20,9 @@
   ],
   "license": "MPL-2.0",
   "bugs": {
-    "url": "https://github.com/Lemonpeach/react-redux-yolo/issues"
+    "url": "https://github.com/Lemonpeach/redux-hydrogen/issues"
   },
-  "homepage": "https://github.com/Lemonpeach/react-redux-yolo#readme",
+  "homepage": "https://github.com/Lemonpeach/redux-hydrogen#readme",
   "devDependencies": {
     "lerna": "^2.9.0"
   }

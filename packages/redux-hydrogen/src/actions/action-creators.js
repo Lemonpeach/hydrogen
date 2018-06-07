@@ -4,7 +4,7 @@ const createAction = (verb, name, stage, { data, error } = {}) => ({
   type: getType(verb, name, stage),
   verb,
   name,
-  creator: '@redux-yolo',
+  creator: '@redux-hydrogen',
   data,
   error
 });
