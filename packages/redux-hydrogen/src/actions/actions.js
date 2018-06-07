@@ -24,4 +24,4 @@ export const isReset = type => isType(type, verbs.RESET);
 export const isQuery = type => isType(type, verbs.GET) || isType(type, verbs.FIND) || isType(type, verbs.FIRST);
 
 export const getType = (verb, name, stage) =>
-  `@redux-yolo/${verb.toUpperCase()}_${name.toUpperCase()}_${stage.toUpperCase()}`;
+  `@redux-hydrogen/${verb.toUpperCase()}_${name.toUpperCase()}_${stage.toUpperCase()}`;

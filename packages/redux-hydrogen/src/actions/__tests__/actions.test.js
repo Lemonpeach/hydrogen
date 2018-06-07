@@ -33,7 +33,7 @@ describe('actions', () => {
 
   test('getType', () => {
     expect(getType(verbs.CREATE, 'people', stages.FULFILLED)).toEqual(
-      '@redux-yolo/CREATE_PEOPLE_FULFILLED'
+      '@redux-hydrogen/CREATE_PEOPLE_FULFILLED'
     );
   });
 

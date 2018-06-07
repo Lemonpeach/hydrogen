@@ -21,7 +21,7 @@ describe('index', () => {
     adapter = exported.default(feathers);
   });
 
-  test('exports default feathers yolo', () => {
+  test('exports default feathers adapter', () => {
     expect(adapter).toBeInstanceOf(exported.FeathersAdapter);
     expect(adapter).toHaveProperty('feathers', feathers);
   });
@@ -50,22 +50,22 @@ describe('index', () => {
   });
 
   test('create', () => {
-    adapter.service('expect me').create({ name: 'McPhearson' }, { job: 'yolo' });
-    expect(feathersService.create).toHaveBeenCalledWith({ name: 'McPhearson' }, { query: { job: 'yolo' } });
+    adapter.service('expect me').create({ name: 'McPhearson' }, { job: 'hydrogen' });
+    expect(feathersService.create).toHaveBeenCalledWith({ name: 'McPhearson' }, { query: { job: 'hydrogen' } });
   });
 
   test('update', () => {
-    adapter.service('expect me').update(1, { name: 'McPhearson' }, { job: 'yolo' });
-    expect(feathersService.update).toHaveBeenCalledWith(1, { name: 'McPhearson' }, { query: { job: 'yolo' } });
+    adapter.service('expect me').update(1, { name: 'McPhearson' }, { job: 'hydrogen' });
+    expect(feathersService.update).toHaveBeenCalledWith(1, { name: 'McPhearson' }, { query: { job: 'hydrogen' } });
   });
 
   test('patch', () => {
-    adapter.service('expect me').patch(1, { name: 'McPhearson' }, { job: 'yolo' });
-    expect(feathersService.patch).toHaveBeenCalledWith(1, { name: 'McPhearson' }, { query: { job: 'yolo' } });
+    adapter.service('expect me').patch(1, { name: 'McPhearson' }, { job: 'hydrogen' });
+    expect(feathersService.patch).toHaveBeenCalledWith(1, { name: 'McPhearson' }, { query: { job: 'hydrogen' } });
   });
 
   test('remove', () => {
-    adapter.service('expect me').remove(1, { job: 'yolo' });
-    expect(feathersService.remove).toHaveBeenCalledWith(1, { query: { job: 'yolo' } });
+    adapter.service('expect me').remove(1, { job: 'hydrogen' });
+    expect(feathersService.remove).toHaveBeenCalledWith(1, { query: { job: 'hydrogen' } });
   });
 });
