@@ -36,12 +36,12 @@ export const hydrogenize = (
         nextProps.provideMeta.shouldRequest &&
         !isEqual(propsToParams(this.props), propsToParams(nextProps))
       ) {
-        hydrogen(name)[method](propsToParams(nextProps))(nextProps.dispatch);
+        hydrogen.service(name)[method](propsToParams(nextProps))(nextProps.dispatch);
       }
     },
     componentDidMount() {
       if (this.props.provideMeta.shouldRequest) {
-        hydrogen(name)[method](propsToParams(this.props))(this.props.dispatch);
+        hydrogen.service(name)[method](propsToParams(this.props))(this.props.dispatch);
       }
     }
   })
