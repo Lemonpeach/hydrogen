@@ -26,6 +26,12 @@
     "url": "https://github.com/Lemonpeach/redux-hydrogen/issues"
   },
   "homepage": "https://github.com/Lemonpeach/redux-hydrogen#readme",
+  "dependencies": {
+    "@feathersjs/commons": "^1.4.1",
+    "dot-prop-immutable": "^1.4.0",
+    "lodash": "^4.17.10",
+    "sift": "^5.1.0"
+  },
   "devDependencies": {
     "@scotia/eslint-config-scotiabank-base": "^1.3.0",
     "babel-cli": "^6.26.0",
@@ -51,9 +57,5 @@
         "statements": 80
       }
     }
-  },
-  "dependencies": {
-    "dot-prop-immutable": "^1.4.0",
-    "lodash": "^4.17.10"
   }
 }
