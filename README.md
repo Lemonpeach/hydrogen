@@ -87,25 +87,25 @@ const enhance = compose(
 );
 
 const Tags = enhance(({ createTag, tags }) => (
-  <div>
-  <button
-    onClick={e => {
-      e.preventDefault();
-      createTag({
-        name: sillyname(),
-        date: moment.format()
-      })
-    }}
-  />
-  {
-    tags.map(t => (
-      <Fragment>
-        <span>{t.name}</span>
-        <span>{t.date}</span>
-      </Fragment>
-    ))
-  }
-  </div>
+  <Fragment>
+    <button
+      onClick={e => {
+        e.preventDefault();
+        createTag({
+          name: sillyname(),
+          date: moment.format()
+        })
+      }}
+    />
+    {
+      tags.map(t => (
+        <Fragment>
+          <span>{t.name}</span>
+          <span>{t.date}</span>
+        </Fragment>
+      ))
+    }
+  </Fragment>
 ));
 ```
 
