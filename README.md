@@ -1,7 +1,8 @@
-# redux-hydrogen
+# hydrogen
+
 Don't waste your time writing redux and react boilerplate.
 
-[![Build Status](https://travis-ci.org/Lemonpeach/redux-hydrogen.svg?branch=master)](https://travis-ci.org/Lemonpeach/redux-hydrogen)
+[![Build Status](https://travis-ci.org/Lemonpeach/hydrogen.svg?branch=master)](https://travis-ci.org/Lemonpeach/hydrogen)
 
 ## Overview
 
@@ -17,12 +18,12 @@ Provides a suite of pluggable redux and react tools that aim to remove boilerpla
 
 ## Example
 
-The following is a non-exhaustive example of what is possible when using `redux-hydrogen`.
+The following is a non-exhaustive example of what is possible when using Hydrogen's suite of tools.
 
 ### Installation
 
 ```bash
-npm install -D redux-hydrogen redux-hydrogen-feathers react-redux-hydrogen
+npm install -D @hydrogenjs/redux-hydrogen @hydrogenjs/redux-hydrogen-feathers @hydrogenjs/react-redux-hydrogen
 ```
 
 ### Set Up
@@ -30,9 +31,9 @@ npm install -D redux-hydrogen redux-hydrogen-feathers react-redux-hydrogen
 
 ```js
 // hydrogen.js
-import createHydrogen from 'redux-hydrogen';
-import feathersHydrogen from 'redux-hydrogen-feathers';
-import create, { compose } from 'react-redux-hydrogen';
+import createHydrogen from '@hydrogenjs/redux-hydrogen';
+import feathersHydrogen from '@hydrogenjs/redux-hydrogen-feathers';
+import create, { compose } from '@hydrogenjs/react-redux-hydrogen';
 
 import client from './my-feathers-client';
 
@@ -52,9 +53,8 @@ export {
 
 ```js
 // store.js
-import { createStore } from 'redux';
-import { combineReducers } from 'redux';
-import { reducer } from 'redux-hydrogen';
+import { createStore, combineReducers } from 'redux';
+import { reducer } from '@hydrogenjs/redux-hydrogen';
 
 const combinedReducers = combineReducers({
   hydrogen: reducer // it must be mounted under 'hydrogen'
