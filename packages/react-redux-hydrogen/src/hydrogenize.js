@@ -3,7 +3,7 @@ import compose from 'recompose/compose';
 import lifecycle from 'recompose/lifecycle';
 import isEqual from 'lodash/isEqual';
 
-import { selectors } from 'redux-hydrogen';
+import { selectors } from '@hydrogenjs/redux-hydrogen';
 
 export const hydrogenize = (
   hydrogen,
