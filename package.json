@@ -1,5 +1,5 @@
 {
-  "name": "redux-hydrogen-packages",
+  "name": "@hydrogenjs/packages",
   "version": "0.0.0",
   "description": "Don't waste your time writing react and react-redux boilerplate.",
   "main": "index.js",
