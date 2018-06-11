@@ -20,6 +20,13 @@ Provides a suite of pluggable redux and react tools that aim to remove boilerpla
 
 The following is a non-exhaustive example of what is possible when using Hydrogen's suite of tools.
 
+In this example:
+
+- We have a REST endpoint that stores `tag` data.
+  - A tag has a name and a date representing when it was created.
+  - The `tags` endpoint exists at `${host}/tags` and our [FeathersJS client](https://github.com/feathersjs/client) is set up for us already.
+- We want to build a component to list all `tags` created today, as well as a button that will add a new tag with a random name.
+
 ### Installation
 
 ```bash
@@ -27,7 +34,6 @@ npm install -D @hydrogenjs/redux-hydrogen @hydrogenjs/redux-hydrogen-feathers @h
 ```
 
 ### Set Up
-
 
 ```js
 // hydrogen.js
@@ -94,7 +100,7 @@ const Tags = enhance(({ createTag, tags }) => (
         createTag({
           name: sillyname(),
           date: moment.format()
-        })
+        });
       }}
     />
     {
@@ -113,10 +119,10 @@ const Tags = enhance(({ createTag, tags }) => (
 
 We wrap our component in two HOCs.
 
-1. Find from `react-redux-hydrogen`. It specifies to load all `tags` where their date is greater than 12 am today.
-2. Connect from `react-redux` which maps `redux-hydrogen`'s create action to dispatch.
+1. `find` from `react-redux-hydrogen`. In short, it will load all `tags` where their date is greater than 12 am today.
+2. `connect` from `react-redux` which maps `redux-hydrogen`'s create action to dispatch.
 
-The `find` HOC will load the `tags` resource into your component. It does this by attempting to select it from local `redux` state, and if not found, it will make a request through your configured request adapter to retrieve the data. It applies any query given to it in its third function argment to both filter the local state and as a query paramter to your backend.
+The `find` HOC will load the `tags` resource into your component. It does this by attempting to select it from local `redux` state, and if not found, it will make a request through your configured request adapter to retrieve the data. It applies any query given to it (in its third function argment) to both filter the local state and as a query paramter to your backend.
 
 In the background `redux-hydrogen` is managing the reducers, actions, and selectors that `react-redux-hydrogen` is using to load the `tags` resource.
 
