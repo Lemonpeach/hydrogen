@@ -3,10 +3,9 @@
   "version": "0.0.0",
   "description": "Don't waste your time writing redux and react boilerplate.",
   "scripts": {
-    "test": "lerna run test",
-    "postinstall": "lerna bootstrap",
     "build": "lerna run build",
-    "prepublishOnly": "npm run build"
+    "test": "npm run build && lerna run test",
+    "postinstall": "lerna bootstrap"
   },
   "repository": {
     "type": "git",
