@@ -12,7 +12,9 @@ const toSiftQuery = query => {
   each(
     query,
     (value, key) => {
-      if (!isNil(value.$regexp)) {
+      if (isNil(value)) {
+        q[key] = value;
+      } else if (!isNil(value.$regexp)) {
         q[key] = { $regex: value.$regexp };
       } else if (!isNil(value.$iRegexp)) {
         q[key] = { $regex: new RegExp(value.$iRegexp, 'i') };

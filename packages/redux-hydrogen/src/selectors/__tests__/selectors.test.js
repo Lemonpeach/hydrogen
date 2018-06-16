@@ -64,6 +64,18 @@ describe('selectors', () => {
     )).toEqual([{ id: 1, name: 'McPhearson' }, { id: 2, name: 'McPhearson' }]);
   });
 
+  test('find: accepts null query value', () => {
+    expect(selectors.find(
+      dotprop.set(
+        initialState,
+        'hydrogen.people.data',
+        { 1: { id: 1, name: null } }
+      ),
+      'people',
+      { name: null }
+    )).toEqual([{ id: 1, name: null }]);
+  });
+
   test('first', () => {
     expect(selectors.first(initialState, 'people', { id: 1 })).toEqual(undefined);
     expect(selectors.first(
