@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.3.5"></a>
+## [0.3.5](https://github.com/Lemonpeach/redux-hydrogen/compare/v0.3.4...v0.3.5) (2018-06-16)
+
+
+
+
+**Note:** Version bump only for package @hydrogenjs/react-redux-hydrogen
+
 <a name="0.3.3"></a>
 ## [0.3.3](https://github.com/Lemonpeach/redux-hydrogen/compare/v0.3.2...v0.3.3) (2018-06-10)
 

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.3.5"></a>
+## [0.3.5](https://github.com/Lemonpeach/redux-hydrogen/compare/v0.3.4...v0.3.5) (2018-06-16)
+
+
+### Bug Fixes
+
+* **redux-hydrogen:** accept null as a query parameter ([1595a4e](https://github.com/Lemonpeach/redux-hydrogen/commit/1595a4e))
+
+
+
+
 <a name="0.3.3"></a>
 ## [0.3.3](https://github.com/Lemonpeach/redux-hydrogen/compare/v0.3.2...v0.3.3) (2018-06-10)
 

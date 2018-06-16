@@ -1,6 +1,6 @@
 {
   "name": "@hydrogenjs/redux-hydrogen-feathers",
-  "version": "0.3.2",
+  "version": "0.3.5",
   "description": "Feathersjs request adapter for redux-hydrogen.",
   "main": "lib/index.js",
   "scripts": {
