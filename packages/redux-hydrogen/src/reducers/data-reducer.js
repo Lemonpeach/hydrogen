@@ -19,7 +19,7 @@ export const reducer = (state, action) => {
     if (isRemove(type)) {
       return reduce([remove(data.id), pending(false)], state);
     }
-    const r = [insert(data), pending(false)];
+    const r = [insert(data.data || data), pending(false)];
     if (isQuery(type)) {
       r.push(queried(verb, query));
     }

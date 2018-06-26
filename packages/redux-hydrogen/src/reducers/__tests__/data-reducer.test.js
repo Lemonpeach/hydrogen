@@ -75,6 +75,23 @@ describe('reducers/data-reducer', () => {
     expect(pending()).toHaveBeenCalledWith(state);
   });
 
+  test('handles paginated insert action', () => {
+    const state = {};
+    const { reducer } = require('../data-reducer');
+    reducer(state, {
+      data: {
+        data: [{ id: 1 }, { id: 2 }], skip: 10, limit: 10, total: 250
+      },
+      verb: verbs.FIND,
+      type: getType(verbs.FIND, 'people', stages.FULFILLED)
+    });
+    const { insert, pending } = require('../modifiers');
+    expect(insert).toHaveBeenCalledWith([{ id: 1 }, { id: 2 }]);
+    expect(insert()).toHaveBeenCalledWith(state);
+    expect(pending).toHaveBeenCalledWith(false);
+    expect(pending()).toHaveBeenCalledWith(state);
+  });
+
   test('handles query insert action', () => {
     const state = {};
     const { reducer } = require('../data-reducer');
