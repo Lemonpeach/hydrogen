@@ -18,7 +18,7 @@ export const hydrogenize = (
       const params = propsToParams(props);
       return {
         [injectProp]: selectors[method](state, name, params),
-        provideMeta: {
+        hydrogenMeta: {
           shouldRequest: selectors.shouldRequest(state, method, name, params) && shouldRequest(props)
         }
       };
@@ -33,14 +33,14 @@ export const hydrogenize = (
   lifecycle({
     componentWillReceiveProps(nextProps) {
       if (
-        nextProps.provideMeta.shouldRequest &&
+        nextProps.hydrogenMeta.shouldRequest &&
         !isEqual(propsToParams(this.props), propsToParams(nextProps))
       ) {
         hydrogen.service(name)[method](propsToParams(nextProps))(nextProps.dispatch);
       }
     },
     componentDidMount() {
-      if (this.props.provideMeta.shouldRequest) {
+      if (this.props.hydrogenMeta.shouldRequest) {
         hydrogen.service(name)[method](propsToParams(this.props))(this.props.dispatch);
       }
     }
