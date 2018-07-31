@@ -19,7 +19,9 @@ export const createService = (name, adapter) => ({
   remove: thunk.bind(null, name, adapter, verbs.REMOVE, false),
   upsert(data, query) {
     return dispatch => this.find(query)(dispatch).then(result => {
-      if (result.data.length > 0) return { ...result, data: result.data[0] };
+      if (result.data.length > 0) {
+        return this.patch(result.data[0].id, data, query)(dispatch);
+      }
       return this.create(data)(dispatch);
     });
   }
