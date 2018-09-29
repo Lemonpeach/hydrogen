@@ -5,21 +5,28 @@ import isEqual from 'lodash/isEqual';
 
 import { selectors } from '@hydrogenjs/redux-hydrogen';
 
+import { extractOptions } from './utils';
+
 export const hydrogenize = (
   hydrogen,
   method,
   name,
   injectProp,
-  propsToParams = () => {},
-  shouldRequest = () => true
+  options = {}
 ) => compose( // eslint-disable-line
   connect(
     (state, props) => {
-      const params = propsToParams(props);
+      const { query, wait } = extractOptions(options);
+
+      if (wait(props)) {
+        return { [injectProp]: null, hydrogenMeta: { shouldRequest: false } };
+      }
+
+      const params = query(props);
       return {
         [injectProp]: selectors[method](state, name, params),
         hydrogenMeta: {
-          shouldRequest: selectors.shouldRequest(state, method, name, params) && shouldRequest(props)
+          shouldRequest: selectors.shouldRequest(state, method, name, params)
         }
       };
     },
@@ -32,16 +39,18 @@ export const hydrogenize = (
   ),
   lifecycle({
     componentWillReceiveProps(nextProps) {
+      const { query } = extractOptions(options);
       if (
         nextProps.hydrogenMeta.shouldRequest &&
-        !isEqual(propsToParams(this.props), propsToParams(nextProps))
+        !isEqual(query(this.props), query(nextProps))
       ) {
-        hydrogen.service(name)[method](propsToParams(nextProps))(nextProps.dispatch);
+        hydrogen.service(name)[method](query(nextProps))(nextProps.dispatch);
       }
     },
     componentDidMount() {
+      const { query } = extractOptions(options);
       if (this.props.hydrogenMeta.shouldRequest) {
-        hydrogen.service(name)[method](propsToParams(this.props))(this.props.dispatch);
+        hydrogen.service(name)[method](query(this.props))(this.props.dispatch);
       }
     }
   })
