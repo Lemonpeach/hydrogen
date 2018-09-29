@@ -8,5 +8,5 @@ export const extractOptions = (options = {}) => {
   if (isFunction(options)) {
     return { ...defaults, query: options };
   }
-  return { ...defaults, options };
+  return { ...defaults, ...options };
 };
