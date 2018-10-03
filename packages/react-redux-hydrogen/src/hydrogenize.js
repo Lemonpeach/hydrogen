@@ -39,10 +39,12 @@ export const hydrogenize = (
   ),
   lifecycle({
     componentWillReceiveProps(nextProps) {
-      const { query } = extractOptions(options);
+      const { query, wait } = extractOptions(options);
       if (
-        nextProps.hydrogenMeta.shouldRequest &&
-        !isEqual(query(this.props), query(nextProps))
+        nextProps.hydrogenMeta.shouldRequest && (
+          (wait(this.props) && !wait(nextProps)) ||
+          !isEqual(query(this.props), query(nextProps))
+        )
       ) {
         hydrogen.service(name)[method](query(nextProps))(nextProps.dispatch);
       }
