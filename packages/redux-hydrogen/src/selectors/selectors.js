@@ -48,12 +48,16 @@ export const selectors = {
   get(state, name, id) {
     return dotprop.get(getData(state, name), id);
   },
-  find(state, name, predicate) {
+  find(state, name, predicate, filter) {
     const { query, filters } = filterQuery(predicate || {});
     const data = values(getData(state, name));
 
     if (filters.$sort) {
       data.sort(sorter(filters.$sort));
+    }
+
+    if (filter) {
+      sift.use(filter);
     }
 
     return sift(toSiftQuery(query), data);
