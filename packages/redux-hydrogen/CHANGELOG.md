@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.1.1"></a>
+## [1.1.1](https://github.com/Lemonpeach/redux-hydrogen/compare/v1.1.0...v1.1.1) (2019-02-24)
+
+
+### Bug Fixes
+
+* support deep query selectors ([290e4f6](https://github.com/Lemonpeach/redux-hydrogen/commit/290e4f6))
+
+
+
+
 <a name="1.1.0"></a>
 # [1.1.0](https://github.com/Lemonpeach/redux-hydrogen/compare/v1.0.2...v1.1.0) (2018-11-04)
 
