@@ -2,6 +2,7 @@ import { sorter, filterQuery } from '@feathersjs/commons';
 import values from 'lodash/values';
 import each from 'lodash/each';
 import isNil from 'lodash/isNil';
+import isPlainObject from 'lodash/isPlainObject';
 import sift from 'sift';
 import dotprop from 'dot-prop-immutable';
 
@@ -18,6 +19,8 @@ const toSiftQuery = query => {
         q[key] = { $regex: value.$regexp };
       } else if (!isNil(value.$iRegexp)) {
         q[key] = { $regex: new RegExp(value.$iRegexp, 'i') };
+      } else if (isPlainObject(value)) {
+        q[key] = toSiftQuery(value);
       } else {
         q[key] = value;
       }
