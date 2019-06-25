@@ -45,8 +45,9 @@ const getData = (state, name) => dotprop.get(getState(state, name), 'data');
 
 export const selectors = {
   hasQueried,
-  shouldRequest(state, verb, name, query) {
-    return !isPending(state, name) && !hasQueried(state, verb, name, query);
+  shouldRequest(state, verb, name, query, cache = true) {
+    return !isPending(state, name) &&
+      (!cache || !hasQueried(state, verb, name, query));
   },
   get(state, name, id) {
     return dotprop.get(getData(state, name), id);

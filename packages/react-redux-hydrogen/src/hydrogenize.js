@@ -16,7 +16,9 @@ export const hydrogenize = (
 ) => compose( // eslint-disable-line
   connect(
     (state, props) => {
-      const { query, wait, filter } = extractOptions(options);
+      const {
+        query, wait, filter, cache
+      } = extractOptions(options);
 
       if (wait(props)) {
         return { [injectProp]: null, hydrogenMeta: { shouldRequest: false } };
@@ -26,7 +28,7 @@ export const hydrogenize = (
       return {
         [injectProp]: selectors[method](state, name, params, filter),
         hydrogenMeta: {
-          shouldRequest: selectors.shouldRequest(state, method, name, params)
+          shouldRequest: selectors.shouldRequest(state, method, name, params, cache)
         }
       };
     },
