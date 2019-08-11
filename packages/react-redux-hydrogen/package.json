@@ -1,6 +1,6 @@
 {
   "name": "@hydrogenjs/react-redux-hydrogen",
-  "version": "1.1.2",
+  "version": "2.0.0",
   "description": "Don't waste your time writing react-redux boilerplate.",
   "main": "lib/index.js",
   "scripts": {
