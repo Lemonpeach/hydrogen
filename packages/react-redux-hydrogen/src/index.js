@@ -1,11 +1,7 @@
-import compose from 'recompose/compose';
-
-import { hydrogenize } from './hydrogenize';
+import { useHydrogen } from './use-hydrogen';
 
 export default hydrogen => ({
-  find: hydrogenize.bind(undefined, hydrogen, 'find'),
-  first: hydrogenize.bind(undefined, hydrogen, 'first'),
-  get: hydrogenize.bind(undefined, hydrogen, 'get')
+  useFind: (...args) => useHydrogen(hydrogen, 'find', ...args),
+  useFirst: (...args) => useHydrogen(hydrogen, 'first', ...args),
+  useGet: (...args) => useHydrogen(hydrogen, 'get', ...args)
 });
-
-export { compose };
