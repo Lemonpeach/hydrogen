@@ -37,92 +37,87 @@ npm install -D @hydrogenjs/redux-hydrogen @hydrogenjs/redux-hydrogen-feathers @h
 
 ```js
 // hydrogen.js
-import createHydrogen from '@hydrogenjs/redux-hydrogen';
-import feathersHydrogen from '@hydrogenjs/redux-hydrogen-feathers';
-import create, { compose } from '@hydrogenjs/react-redux-hydrogen';
+import createHydrogen from '@hydrogenjs/redux-hydrogen'
+import feathersHydrogen from '@hydrogenjs/redux-hydrogen-feathers'
+import create from '@hydrogenjs/react-redux-hydrogen'
 
-import client from './my-feathers-client';
+import client from './my-feathers-client'
 
-const hydrogen = createHydrogen({ adapter: feathersHydrogen(client) });
-const hydrogenize = create(hydrogen);
+const hydrogen = createHydrogen({ adapter: feathersHydrogen(client) })
+const hydrogenize = create(hydrogen)
 
-const { find, first, get } = hydrogenize;
+const { useFind, userFirst, useGet } = hydrogenize
 
 export {
-  find,
-  first,
-  get,
-  compose,
+  useFind,
+  userFirst,
+  useGet,
   hydrogen
-};
+}
 ```
 
 ```js
 // store.js
-import { createStore, combineReducers } from 'redux';
-import { reducer } from '@hydrogenjs/redux-hydrogen';
+import { createStore, combineReducers } from 'redux'
+import { reducer } from '@hydrogenjs/redux-hydrogen'
 
 const combinedReducers = combineReducers({
   hydrogen: reducer // it must be mounted under 'hydrogen'
-});
+})
 
-export const store = createStore(combinedReducers);
+export const store = createStore(combinedReducers)
 ```
 
 ### Usage
 
 ```js
 // my-component.js
-import React from 'react';
-import { connect } from 'react-redux';
-import moment from 'moment';
-import sillyname from 'sillyname';
+import React from 'react'
+import { useDispatch } from 'react-redux'
+import moment from 'moment'
+import sillyname from 'sillyname'
 
-import { find, hydrogen, compose } from './hydrogen';
+import { useFind, hydrogen } from './hydrogen'
 
-const enhance = compose(
-  // find all tags where date is greater than 12 am today
-  find('tags', 'tags', () = ({
-    date: { $gt: moment.startOf('day').format() }
-  })),
-  // map dispatch to redux-hydrogen's create action
-  connect(
-    null,
-    { createTag: hydrogen.service('tags').create }
+const createTag = hydrogen.service('tags').create
+
+const Tags = ({ createTag, tags }) => {
+  const tags = useFind('tags', {
+    query: { $gt: moment.startOf('day').format() }
+  })
+  const dispatch = useDispatch()
+
+  return (
+    <Fragment>
+      <button
+        onClick={e => {
+          e.preventDefault()
+          createTag({
+            name: sillyname(),
+            date: moment.format()
+          })(dispatch)
+        }}
+      />
+      {
+        tags.map(t => (
+          <Fragment>
+            <span>{t.name}</span>
+            <span>{t.date}</span>
+          </Fragment>
+        ))
+      }
+    </Fragment>
   )
-);
-
-const Tags = enhance(({ createTag, tags }) => (
-  <Fragment>
-    <button
-      onClick={e => {
-        e.preventDefault();
-        createTag({
-          name: sillyname(),
-          date: moment.format()
-        });
-      }}
-    />
-    {
-      tags.map(t => (
-        <Fragment>
-          <span>{t.name}</span>
-          <span>{t.date}</span>
-        </Fragment>
-      ))
-    }
-  </Fragment>
-));
+}
 ```
 
 ### Explanation
 
-We wrap our component in two HOCs.
+1. The `useFind` hook from `react-redux-hydrogen` will load all `tags` where their date is greater than 12 am today.
+2. A create thunk is instantiated from `redux-hydrogen`, for the `tags` service, to
+take care of making requests to the back-end and inserting into local `redux` state.
 
-1. `find` from `react-redux-hydrogen`. In short, it will load all `tags` where their date is greater than 12 am today.
-2. `connect` from `react-redux` which maps `redux-hydrogen`'s create action to dispatch.
-
-The `find` HOC will load the `tags` resource into your component. It does this by attempting to select it from local `redux` state, and if not found, it will make a request through your configured request adapter to retrieve the data. It applies any query given to it (in its third function argment) to both filter the local state and as a query paramter to your backend.
+The `useFind` hook will load the `tags` resource into your component. It does this by attempting to select it from local `redux` state, and if not found, it will make a request through your configured request adapter to retrieve the data. It applies any query given to it to both filter the local state and as a query parameter to your backend.
 
 In the background `redux-hydrogen` is managing the reducers, actions, and selectors that `react-redux-hydrogen` is using to load the `tags` resource.
 
