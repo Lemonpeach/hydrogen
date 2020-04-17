@@ -1,9 +1,9 @@
 # Installation
 
-The most basic installation only needs `redux-hydrogen`. You can use this in any framework that is compatible with `redux`. 
+The most basic installation  needs `redux-hydrogen` and `redux-thunk`. You can use this in any framework that is compatible with `redux`. 
 
 ```bash
-npm install @hydrogenjs/redux-hydrogen
+npm install @hydrogenjs/redux-hydrogen redux-thunk
 ```
 
 ## Complementary Packages
