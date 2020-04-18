@@ -13,7 +13,7 @@ At a high level Hydrogen takes care of:
 3. Managing data in your redux state over time.
 4. Seamlessly integrating into React with React hooks.
 
-## Reasons for Hydrogen's Existence
+## Reasons for Hydrogen's existence
 
 We have observed that standard react and redux design patterns are not as good as they can be. Some of those patterns are:
 
