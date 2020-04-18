@@ -2,16 +2,16 @@
 
 Configuration of Hydrogen is simple and straightforward.
 
-1. Configure Hydrogen with the request adapter and plugins of your choosing.
+1. Configure Hydrogen with the request adapter and "plugins" of your choosing.
 2. Add Hydrogen's reducer to your `redux` store.
 
 **That's all there is to it!**
 
-Please see the [list of packages](./packages.md) for more options on how you can configure Hydrogen.
+Please see the [list of packages](/getting-started/packages.md) for more options on how you can configure Hydrogen.
 
 ## Configure Hydrogen
 
-In order to use Hydrogen in your application you must configure an instance of it, with your chosen request adapter and plugins.
+In order to use Hydrogen in your application you must configure an instance of it, with your chosen request adapter and "plugins".
 
 This example assumes that you are using:
 

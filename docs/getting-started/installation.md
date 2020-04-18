@@ -6,7 +6,7 @@ The most basic installation  needs `redux-hydrogen` and `redux-thunk`. You can u
 npm install @hydrogenjs/redux-hydrogen redux-thunk
 ```
 
-## Complementary Packages
+## Complementary packages
 
 Hydrogen is a pluggable ecosystem, and as such, there are a number of other packages that enable integration with `redux-hydrogen` and other frameworks.
 
@@ -16,9 +16,9 @@ To install any of the listed packages simply replace the package name in the fol
 npm install @hydrogenjs/${package-name}
 ```
 
-### Popular Packages
+### Popular packages
 
-The following is a non-exhaustive list of the packages currently available in Hydrogen's ecosystem. Please see the [packages page](./packages.md) to view the full list with accompanying descriptions.
+The following is a non-exhaustive list of the packages currently available in Hydrogen's ecosystem. Please see the [packages page](/getting-started/packages.md) to view the full list with accompanying descriptions.
 
 | Framework                           | Package                 |
 | ----------------------------------- | :---------------------- |

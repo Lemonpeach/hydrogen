@@ -5,7 +5,7 @@ This is a high level example for the usage of the Hydrogen ecosystem.
 This example assumes:
 
 1. There is a RESTful `tags` endpoint that exists at `${host}/tags`.
-2. We are using [FeathersJS](https://github.com/feathersjs-ecosystem/client) as our request client.
+2. We are using [Feathers](https://github.com/feathersjs-ecosystem/client) as our request client.
 
 Demonstrates how to:
 
@@ -17,7 +17,7 @@ It uses the following Hydrogen packages:
 * `redux-hydrogen`
 * `react-redux-hydrogen`
 
-##### Please Note
+##### Please note
 
 This example has left out the configuration of Hydrogen in your application, but it represents the only redux code other than your configuration that you will need to write. No other redux, or React code is needed to perform these operations with Hydrogen.
 
