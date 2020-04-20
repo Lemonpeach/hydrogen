@@ -6,4 +6,4 @@ Don't waste your time writing redux and react boilerplate.
 
 Hydrogen is an ecosystem of pluggable redux and react tools that aim to remove boilerplate by leveraging a set of minimal conventions.
 
-**To discover more, please see the [documentation](https://lemonpeach.github.io/hydrogen/).**
+**To discover more, please see the [documentation](https://www.hydrogenjs.com/).**
