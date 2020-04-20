@@ -1,3 +1,0 @@
-# redux-hydrogen
-
-To do.

@@ -62,3 +62,9 @@ typings/
 
 # gitbook
 _book
+
+# Zeit
+.now
+
+# Docusaurus
+.docusaurus

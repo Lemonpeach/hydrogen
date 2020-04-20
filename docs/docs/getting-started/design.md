@@ -1,4 +1,7 @@
-# Design
+---
+id: design
+title: Design
+---
 
 The design of Hydrogen can be categorized into three main categories:
 
@@ -12,12 +15,12 @@ For example, there are plans to include an [authentication package](https://gith
 
 ## Core package
 
-The core `redux-hydrogen` package represents the bulk of the features that Hydrogen offers. Hydrogen is structured as a service layer to `redux` and exposes high level APIs that enable you to work with `redux` state easily. 
+The core `redux-hydrogen` package represents the bulk of the features that Hydrogen offers. Hydrogen is structured as a service layer to Redux and exposes high level APIs that enable you to work with Redux state easily.
 
 These APIs enable you to trigger CRUD operations on data resources in your application.
 
 1. Transparently fetch and create data from / to your back-end.
-2. Manage the lifecycle of that data in your `redux` state.
+2. Manage the lifecycle of that data in your Redux state.
 
 Under the hood this means that `redux-hydrogen` manages it's own set of `reducers`, `thunks`, `actions`, and `selectors`&mdash;and pulls these all together into service methods for you to easily use in your application.
 
@@ -33,7 +36,7 @@ Creating a new adapter is simple and straightforward. There are no specific docs
 
 ## Framework integrations
 
-Framework integrations allow you to seamlessy integrate `redux-hydrogen` into other frameworks of your choice. For example, you can easily use `redux-hydrogen` in `react` by using the [react-redux-hydrogen](/api/react-redux-hydrogen.md) package.
+Framework integrations allow you to seamlessy integrate `redux-hydrogen` into other frameworks of your choice. For example, you can easily use `redux-hydrogen` in React by using the [react-redux-hydrogen](/api/react-redux-hydrogen.md) package.
 
 This package wraps `redux-hydrogen` service methods into easy to use React hooks that enable you to just load data without worrying about the how.
 
