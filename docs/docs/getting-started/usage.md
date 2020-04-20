@@ -1,29 +1,33 @@
-# Usage
+---
+id: usage
+title: Usage
+---
 
-This is a high level example for the usage of the Hydrogen ecosystem.
+This is a high level example for the usage of Hydrogen.
 
 This example assumes:
 
-1. There is a RESTful `tags` endpoint that exists at `${host}/tags`.
+1. There is a RESTful `tags` endpoint whose path is `/tags`.
 2. We are using [Feathers](https://github.com/feathersjs-ecosystem/client) as our request client.
 
-Demonstrates how to:
+And demonstrates how to:
 
-1. Create a `tag` that is persisted to your back-end and into your redux state.
-2. Display all `tags` that have been created before the start of today.
+1. Create `tag` data that is persisted to your back-end and into your redux state.
+2. Display all `tag` resources that have been created before the start of today.
 
 It uses the following Hydrogen packages:
 
 * `redux-hydrogen`
 * `react-redux-hydrogen`
 
-##### Please note
 
-This example has left out the configuration of Hydrogen in your application, but it represents the only redux code other than your configuration that you will need to write. No other redux, or React code is needed to perform these operations with Hydrogen.
+:::note
 
-#### Example
+This example has left out how to configure Hydrogen, but it represents the only Redux code other than your configuration that you will need to write. **No other Redux, or React code is needed to perform these operations with Hydrogen.**
 
-```js
+:::
+
+```js title="kickass.js" {6,12-14,20}
 import React from 'react'
 import { useDispatch } from 'react-redux'
 import moment from 'moment'
